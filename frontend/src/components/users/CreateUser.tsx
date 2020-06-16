@@ -23,7 +23,7 @@ interface CreateProps {
   fetchCreateUser: typeof fetchCreateUser;
 }
 
-const Create: React.SFC<CreateProps> = ({
+const Create: React.FC<CreateProps> = ({
   role,
   name,
   email,

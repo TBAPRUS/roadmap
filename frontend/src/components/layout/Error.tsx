@@ -11,10 +11,7 @@ interface ErrorProps {
   changeError: typeof changeError;
 }
 
-const ErrorSFC: React.SFC<ErrorProps> = ({
-  error,
-  changeError,
-}): JSX.Element => (
+const ErrorFC: React.FC<ErrorProps> = ({ error, changeError }): JSX.Element => (
   <div className="error">
     {error}
     <button onClick={() => changeError('')}>close</button>
@@ -26,4 +23,4 @@ const mapStateToProps = (state: AppType) => {
   return { error };
 };
 
-export const CustomError = connect(mapStateToProps, { changeError })(ErrorSFC);
+export const CustomError = connect(mapStateToProps, { changeError })(ErrorFC);

@@ -12,7 +12,7 @@ interface WindowProps {
   resetWindow: typeof resetWindow;
 }
 
-const Window: React.SFC<WindowProps> = ({
+const Window: React.FC<WindowProps> = ({
   window,
   resetWindow,
 }): JSX.Element => {

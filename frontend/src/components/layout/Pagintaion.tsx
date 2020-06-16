@@ -19,7 +19,7 @@ interface PaginationProps {
   fetchMethod: (str: string) => ThunkAction<void, AppType, void, Action>;
 }
 
-export const Pagintaion: React.SFC<PaginationProps> = ({
+export const Pagintaion: React.FC<PaginationProps> = ({
   pagination,
   limit,
   strSort,

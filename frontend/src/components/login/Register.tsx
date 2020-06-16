@@ -22,7 +22,7 @@ interface IRegister {
   fetchRegisterUser: typeof fetchRegisterUser;
 }
 
-const Register: React.SFC<IRegister> = ({
+const Register: React.FC<IRegister> = ({
   email,
   name,
   password,

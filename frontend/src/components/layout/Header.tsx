@@ -12,7 +12,7 @@ interface HeaderProps {
   fetchLogoutUser: typeof fetchLogoutUser;
 }
 
-const Header: React.SFC<HeaderProps> = ({ role, image, fetchLogoutUser }) => (
+const Header: React.FC<HeaderProps> = ({ role, image, fetchLogoutUser }) => (
   <header id="menu">
     <Link className="link" to="/roadmaps">
       Roadmaps

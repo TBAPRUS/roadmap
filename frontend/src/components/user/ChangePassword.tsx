@@ -19,7 +19,7 @@ interface ChangePasswordProps extends PasswordType {
   changeWindow: typeof changeWindow;
 }
 
-const ChangePassword: React.SFC<ChangePasswordProps> = ({
+const ChangePassword: React.FC<ChangePasswordProps> = ({
   currentPassword,
   newPassword,
   changeCurrentPassword,

@@ -11,7 +11,7 @@ interface SectionProps {
   handleDeleteSection: () => void;
 }
 
-export const Section: React.SFC<SectionProps> = ({
+export const Section: React.FC<SectionProps> = ({
   auth,
   title,
   text,

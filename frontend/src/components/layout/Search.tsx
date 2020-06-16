@@ -28,7 +28,7 @@ interface SearchProps {
   fetchMethod: (str: string) => ThunkAction<void, AppType, void, Action>;
 }
 
-const Search: React.SFC<SearchProps> = ({
+const Search: React.FC<SearchProps> = ({
   limit,
   strSort,
   numSort,

@@ -19,7 +19,7 @@ interface ILogin {
   fetchLoginUser: typeof fetchLoginUser;
 }
 
-const Login: React.SFC<ILogin> = ({
+const Login: React.FC<ILogin> = ({
   email,
   password,
   IchangeLoginEmail,
