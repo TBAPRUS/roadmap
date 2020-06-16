@@ -1,0 +1,4 @@
+node_modules
+/backend/config/config.env.env
+/backend/public/img/users/*
+
