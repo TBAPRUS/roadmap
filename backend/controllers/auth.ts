@@ -14,7 +14,7 @@ export const register = AsyncHandler(
   async (req: Request, res: Response, next) => {
     const { name, password, email } = req.body;
 
-    const user: IUser = await User.create({ name, password, email });
+    const user: IUser = await User.create({ name, password, email } as IUser);
 
     sendTokenResponse(user, 200, res);
   }
