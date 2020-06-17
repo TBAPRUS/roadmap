@@ -1,4 +1,5 @@
 node_modules
 /backend/config/config.env.env
-/backend/public/img/users/*
+/backend/public/*
 
+/frontend/dist/*

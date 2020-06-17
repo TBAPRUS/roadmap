@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { ThunkAction } from 'redux-thunk';
 import { Action } from 'redux';
 
@@ -22,28 +22,24 @@ interface SearchProps {
   search: ISearch;
   strSort: string;
   numSort: number;
-  changeLimit: typeof changeLimit;
-  changeSort: typeof changeSort;
-  changeSearch: typeof changeSearch;
   fetchMethod: (str: string) => ThunkAction<void, AppType, void, Action>;
 }
 
-const Search: React.FC<SearchProps> = ({
+export const Search: React.FC<SearchProps> = ({
   limit,
   strSort,
   numSort,
   search,
-  changeLimit,
-  changeSort,
-  changeSearch,
   fetchMethod,
 }) => {
+  const dispatch = useDispatch();
+
   function handleChangeLimit(e: React.ChangeEvent<HTMLInputElement>) {
-    changeLimit(e.target.value);
+    dispatch(changeLimit(e.target.value));
   }
 
   function handleChangeSearch(e: React.ChangeEvent<HTMLInputElement>) {
-    changeSearch(e.target.value);
+    dispatch(changeSearch(e.target.value));
   }
 
   let query = `?limit=${limit}&sort=${
@@ -75,7 +71,9 @@ const Search: React.FC<SearchProps> = ({
         onChange={handleChangeLimit}
       />
       <div className="sort">
-        <button onClick={() => changeSort(numSort === 2 ? 0 : ++numSort)}>
+        <button
+          onClick={() => dispatch(changeSort(numSort === 2 ? 0 : ++numSort))}
+        >
           Sort by {strSort}
         </button>
         {numSort === 1 ? arrow.up : numSort === 2 ? arrow.down : null}
@@ -84,9 +82,3 @@ const Search: React.FC<SearchProps> = ({
     </div>
   );
 };
-
-export default connect(null, {
-  changeLimit,
-  changeSort,
-  changeSearch,
-})(Search);

@@ -9,7 +9,7 @@ import { SearchType } from '../../store/search/types';
 
 import { fetchUsers } from '../../store/users/actions';
 
-import Search from '../layout/Search';
+import { Search } from '../layout/Search';
 import { Pagintaion } from '../layout/Pagintaion';
 
 interface UsersProps {

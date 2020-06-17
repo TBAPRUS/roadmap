@@ -13,7 +13,7 @@ import { fetchRoadmaps } from '../../store/roadmaps/actions';
 
 import { Pagintaion } from '../layout/Pagintaion';
 
-import Search from '../layout/Search';
+import { Search } from '../layout/Search';
 
 interface IRoadmaps {
   list: RoadmapType<string>[];

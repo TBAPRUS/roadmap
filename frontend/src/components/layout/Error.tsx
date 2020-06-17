@@ -1,26 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { AppType } from '../../store';
-import { ErrorType } from '../../store/error/types';
 
 import { changeError } from '../../store/error/actions';
 
-interface ErrorProps {
-  error: ErrorType;
-  changeError: typeof changeError;
-}
+export const CustomError: React.FC = (): JSX.Element => {
+  const dispatch = useDispatch();
+  const error = useSelector((state: AppType) => state.error);
 
-const ErrorFC: React.FC<ErrorProps> = ({ error, changeError }): JSX.Element => (
-  <div className="error">
-    {error}
-    <button onClick={() => changeError('')}>close</button>
-  </div>
-);
-
-const mapStateToProps = (state: AppType) => {
-  const { error } = state;
-  return { error };
+  return (
+    <div className="error">
+      {error}
+      <button onClick={() => dispatch(changeError(''))}>close</button>
+    </div>
+  );
 };
-
-export const CustomError = connect(mapStateToProps, { changeError })(ErrorFC);

@@ -32,7 +32,7 @@ export const user = (state = initState, action: UserActionType): UserType => {
     case RESET_USER:
       return {
         ...state,
-        ...initState,
+        ...{ ...initState, receive: true },
       };
     case RECEIVE_USER:
       return { ...state, receive: true };

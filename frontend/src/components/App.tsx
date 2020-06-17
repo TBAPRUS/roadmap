@@ -17,8 +17,8 @@ import { fetchMeUser, receiveUser } from '../store/user/actions';
 
 import { CustomError } from './layout/Error';
 import { Load } from './layout/Load';
-import Header from './layout/Header';
-import Window from './layout/Window';
+import { Header } from './layout/Header';
+import { Window } from './layout/Window';
 
 import Login from './login/Login';
 import Register from './login/Register';
